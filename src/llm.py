@@ -1,6 +1,3 @@
-# LLM handler
-
----
 
 import os
 import requests
