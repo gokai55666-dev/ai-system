@@ -1,3 +1,10 @@
+# THE core logic
+
+---
+
+
+
+
 from llm import generate
 from memory import save_log
 
