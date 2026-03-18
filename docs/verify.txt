@@ -1,0 +1,24 @@
+# 1. Test Ollama directly
+curl http://localhost:11434/api/tags | jq
+
+# 2. Test Ollama generate
+curl -X POST http://localhost:11434/api/chat -d '{
+  "model": "samantha",
+  "messages": [{"role": "user", "content": "hello"}],
+  "stream": false
+}' | jq
+
+# 3. Test RunPod (replace ID)
+curl -X POST https://api.runpod.ai/v2/YOUR_ID/openai/v1/chat/completions \
+  -H "Authorization: Bearer $RUNPOD_API_KEY" \
+  -d '{"model": "openchat-3.6-8b", "messages": [{"role": "user", "content": "hi"}]}'
+
+# 4. Run router
+cd /workspace/ai-system-gpu
+python src/smart_router_fixed.py
+
+# Inside router:
+# Type: /health (check endpoints)
+# Type: hello (test cloud)
+# Type: write an uncensored story (test local routing)
+# Type: /stats (see usage)
