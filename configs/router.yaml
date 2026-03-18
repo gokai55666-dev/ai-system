@@ -1,0 +1,32 @@
+endpoints:
+  local:
+    # Freedom-AI / Ollama
+    url: http://localhost:11434/api/generate
+    model: samantha-1.11-70b
+    api_key: null
+    is_local: true
+    supports_uncensored: true
+    timeout: 60
+    # For Tailscale: http://100.x.x.x:11434/api/generate
+    
+  cloud:
+    # RunPod vLLM
+    url: https://api.runpod.ai/v2/{endpoint_id}/openai/v1/chat/completions
+    model: openchat/openchat-3.6-8b
+    endpoint_id: ${RUNPOD_ENDPOINT_ID}  # Set in .env
+    api_key: ${RUNPOD_API_KEY}          # Set in .env
+    is_local: false
+    supports_uncensored: false
+    timeout: 30
+
+routing:
+  default: cloud           # Start with fast/cheap
+  nsfw_fallback: local     # Uncensored content goes local
+  offline_mode: false      # Set true to force local only
+  cost_tracking: true      # Log estimated costs
+  
+# For ZTE A71 Termux specific
+mobile:
+  battery_optimization: true  # Reduce polling when on battery
+  data_saver: false           # Set true to prefer local (no data usage)
+  tailscale_required: true    # Force VPN for security
