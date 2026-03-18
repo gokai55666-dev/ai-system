@@ -1,3 +1,22 @@
+
+from pipeline import run_pipeline
+
+def main():
+    while True:
+        prompt = input("\nYou: ")
+
+        if prompt.lower() in ["exit", "quit"]:
+            break
+
+        response = run_pipeline(prompt)
+        print(f"\nAI: {response}")
+
+if __name__ == "__main__":
+    main()
+
+---
+
+
 from pipeline import run_pipeline
 
 def main():
