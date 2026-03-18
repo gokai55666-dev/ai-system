@@ -1,3 +1,15 @@
+from pipeline import run_pipeline
+
+def main():
+    prompt = input(">> ")
+    response = run_pipeline(prompt)
+    print(response)
+
+if __name__ == "__main__":
+    main()
+
+---
+
 from src.api_client import call_openai
 import os
 import json
