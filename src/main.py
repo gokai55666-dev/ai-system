@@ -15,7 +15,6 @@ def main():
                 break
 
             response = run_pipeline(prompt)
-
             print(f"\nAI: {response}\n")
 
         except KeyboardInterrupt:
@@ -24,7 +23,6 @@ def main():
 
         except Exception as e:
             print(f"\n[ERROR] {e}\n")
-
 
 if __name__ == "__main__":
     main()
