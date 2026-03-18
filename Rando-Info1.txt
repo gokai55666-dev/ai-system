@@ -1,4 +1,18 @@
-Understanding and Overcoming LLM Looping: A Guide to Effective Prompting
+
+Here is a comprehensive explanation and a working draft of your AI workflow, designed to address the 'looping' issues you experienced with ChatGPT and guide you in using OpenChat effectively. I've included revised Python code files and a detailed explanation of the strategies employed.
+
+Please find the following attachments:
+
+1.  `explanation.md`: A detailed document explaining why LLMs might get stuck in loops, best practices for prompt engineering, and how to effectively use OpenChat with smaller, structured instructions.
+2.  `ai-system/main.py`: The main Python script, revised to incorporate clearer prompt definitions and structured execution.
+3.  `ai-system/src/api_client.py`: The API client for interacting with OpenRouter (OpenChat), featuring enhanced error handling and logging.
+4.  `ai-system/requirements.txt`: The list of Python dependencies required for the project.
+5.  `ai-system/configs/.env.example`: An example `.env` file to guide you in setting up your API key.
+
+-------
+
+Understanding and Overcoming LLM Looping: 
+A Guide to Effective Prompting
 Introduction
 This document addresses the user's observation that large language models (LLMs), specifically ChatGPT, can sometimes 
 enter a state of 'looping' or misinterpreting requests, leading to unproductive cycles. This report aims to provide a clear understanding of why this occurs and offers actionable strategies, particularly for using models like OpenChat, to achieve more reliable and effective outcomes. We will also provide a revised code structure based on your provided repositories and best practices for LLM interaction.
